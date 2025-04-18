@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success Designs Shop</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #e6f0ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar {
+      background-color: #007bff;
+    }
+    .navbar-brand, .nav-link, .cart-icon {
+      color: #fff !important;
+    }
+    .gallery-item {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .side-cart {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 350px;
+      height: 100vh;
+      background: white;
+      box-shadow: -3px 0 5px rgba(0,0,0,0.2);
+      transition: right 0.3s ease-in-out;
+      z-index: 1050;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .side-cart.open {
+      right: 0;
+    }
+    #cart-items li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-icon {
+      position: relative;
+    }
+    #cart-count {
+      background: red;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      color: white;
+    }
+    footer {
+      background: #007bff;
+      color: #fff;
+      padding: 20px 0;
+    }
+    .social-icons a {
+      color: #fff;
+      margin: 0 10px;
+    }
+    @media (max-width: 768px) {
+      .side-cart {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ebene-Vento Designs</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link cart-icon position-relative" href="#" onclick="toggleCart(event)">
+              <i class="fas fa-shopping-cart fa-lg"></i> <span id="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- [No changes to the rest of the file, just editing the shop section layout] -->
+
+<section class="container mt-5" id="shop">
+  <h2 class="text-center mb-4">Shop</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8a.png" class="menu">
+        <h5 class="mt-2">Flyer Template</h5>
+        <p>$7</p>
+        <button class="btn btn-primary" onclick="addToCart('Flyer Template', 7)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8a.png" class="menu">
+        <h5 class="mt-2">Instagram Post</h5>
+        <p>$6</p>
+        <button class="btn btn-primary" onclick="addToCart('Instagram Post', 6)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8a.png" class="menu">
+        <h5 class="mt-2">Business Card</h5>
+        <p>$5</p>
+        <button class="btn btn-primary" onclick="addToCart('Business Card', 5)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8a.png" class="menu">
+        <h5 class="mt-2">Logo Pack</h5>
+        <p>$12</p>
+        <button class="btn btn-primary" onclick="addToCart('Logo Pack', 12)">Add to Cart</button>
+      </div>
+    </div>
+    <!-- You can copy more blocks like this to add more products -->
+  </div>
+</section>
+
+<section class="container mt-5" id="shop">
+  <h2 class="text-center mb-4">Shop</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8a.png" class="menu">
+        <h5 class="mt-2">Flyer Template</h5>
+        <p>$7</p>
+        <button class="btn btn-primary" onclick="addToCart('Flyer Template', 7)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8.png" class="menu">
+        <h5 class="mt-2">Instagram Post</h5>
+        <p>$6</p>
+        <button class="btn btn-primary" onclick="addToCart('Instagram Post', 6)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8a.png" class="menu">
+        <h5 class="mt-2">Business Card</h5>
+        <p>$5</p>
+        <button class="btn btn-primary" onclick="addToCart('Business Card', 5)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="gallery-item">
+        <img src="img/8.png" class="menu">
+        <h5 class="mt-2">Logo Pack</h5>
+        <p>$12</p>
+        <button class="btn btn-primary" onclick="addToCart('Logo Pack', 12)">Add to Cart</button>
+      </div>
+    </div>
+    <!-- You can copy more blocks like this to add more products -->
+  </div>
+</section>
+
+  <div class="side-cart" id="cart">
+    <h4>Your Cart</h4>
+    <ul id="cart-items" class="list-unstyled"></ul>
+    <p><strong>Total:</strong> $<span id="total-price">0</span></p>
+    <button class="btn btn-success w-100 mt-3" data-bs-toggle="modal" data-bs-target="#checkoutModal">Checkout</button>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="checkout-form">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirm Payment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="container mt-5" id="testimonials">
+    <h2 class="text-center">What Our Clients Say</h2>
+    <blockquote class="text-center">“Amazing designs and super easy download process!” - Jane D.</blockquote>
+  </section>
+
+  <section class="container mt-5" id="contact">
+    <h2 class="text-center">Contact Us</h2>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Your Email" required>
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="text-center mt-5">
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p class="mt-3">&copy; 2025 Success Designs. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const cartItems = [];
+
+    function addToCart(name, price) {
+      cartItems.push({ name, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById("cart-items");
+      const cartCount = document.getElementById("cart-count");
+      const totalPrice = document.getElementById("total-price");
+      cartList.innerHTML = "";
+      let total = 0;
+
+      cartItems.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - $${item.price}`;
+        cartList.appendChild(li);
+        total += item.price;
+      });
+
+      cartCount.textContent = cartItems.length;
+      totalPrice.textContent = total;
+    }
+
+    function toggleCart(event) {
+      event.preventDefault();
+      const cart = document.getElementById("cart");
+      cart.classList.toggle("open");
+    }
+
+    document.getElementById("checkout-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you! Your order has been received.");
+      document.getElementById("checkout-form").reset();
+      cartItems.length = 0;
+      updateCart();
+      const cart = document.getElementById("cart");
+      cart.classList.remove("open");
+      const modal = bootstrap.Modal.getInstance(document.getElementById("checkoutModal"));
+      modal.hide();
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
